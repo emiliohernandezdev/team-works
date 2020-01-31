@@ -4,6 +4,11 @@ import { AuthGuard } from '@nestjs/passport';
 export class TaskController {
   constructor() {}
 
+  @Post('create')
+  async create(data:any){
+    
+  }
+
 
 
 }

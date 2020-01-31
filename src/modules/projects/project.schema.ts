@@ -1,8 +1,8 @@
 import * as mongoose from "mongoose";
-import * as uuid from 'uuid-random';
+import * as shortid from 'shortid';
 
 export const ProjectSchema = new mongoose.Schema({
-    _id: {type: String, default: uuid()},
+    _id: {type: String, default: shortid.generate},
     name: String,
     description: String,
     owner: {type: String, ref: 'User'},

@@ -9,8 +9,12 @@ export class TeamService{
 
     async createTeam(data:any) : Promise<Team>{
         const created = await new this.teamModel(data);
-        return created;
+        return created.save();
     }
 
+    async getTeams(user:any) : Promise<Team[]>{
+        const find = this.teamModel.find({"integrants.user": user}).exec();
+        return find;
+    }
 
 }

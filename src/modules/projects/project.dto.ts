@@ -8,8 +8,5 @@ export class ProjectDto{
     description: String;
 
     @IsNotEmpty()
-    owner: String;
-
-    @IsNotEmpty()
     team: String
 }

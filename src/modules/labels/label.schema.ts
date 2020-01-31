@@ -1,8 +1,7 @@
 import * as mongoose from "mongoose";
-import * as uuid from 'uuid-random';
-
+import * as shortid from 'shortid';
 export const LabelSchema = new mongoose.Schema({
-    _id: {type: String, default: uuid()},
+    _id: {type: String, default: shortid.generate},
     name: String,
     description: String,
     color: String,
