@@ -7,6 +7,8 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import {resolve} from 'path'
 import {LabelModule} from './modules/labels/label.module';
 import { TeamModule } from './modules/teams/team.module';
+import { ProjectModule } from './modules/projects/project.module';
+import { TaskModule } from './modules/tasks/task.module';
 
 
 @Module({
@@ -23,7 +25,9 @@ import { TeamModule } from './modules/teams/team.module';
   }),
   UsersModule,
   LabelModule,
-  TeamModule],
+  TeamModule,
+  ProjectModule,
+  TaskModule],
   controllers: [AppController],
   providers: [AppService, ConfigService],
 })
