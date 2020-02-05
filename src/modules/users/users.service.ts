@@ -15,6 +15,11 @@ export class UserService{
         return user;
     }
 
+    async findOne(id:any) : Promise<User>{
+        const user = await this.userModel.findById(id);
+        return user;
+    }
+
     async login(email:string, password: string){
         const user = await this.userModel.findOne({email: email.toLowerCase() });
         if(user){

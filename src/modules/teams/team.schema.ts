@@ -5,10 +5,12 @@ export const TeamSchema = new mongoose.Schema({
     _id: {type: String, default: shortid.generate},
     name: String,
     description: String,
+    image: String,
     integrants: [
         {
             user: {type: String, ref: 'User'},
             role: String
         }
-    ]
+    ],
+    password: String
 });

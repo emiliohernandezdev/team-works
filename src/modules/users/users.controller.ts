@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Res, UseGuards, Req, UseInterceptors, UploadedFile } from '@nestjs/common';
+import { Controller, Get, Post, Body, Res, UseGuards, Req, UseInterceptors, UploadedFile, Param } from '@nestjs/common';
 import { UserService } from './users.service';
 import { UserDto } from './user.dto';
 import { User } from './user.object';
@@ -32,6 +32,12 @@ export class UserController {
             
           }
       })
+  }
+
+  @Get('image/:id')
+  async getImage(@Param('id') id:any, @Res() res:any){
+    const user = await this.service.findOne(id);
+    return res.sendFile(resolve(`./uploads/avatars/${user.image}`));
   }
 
 

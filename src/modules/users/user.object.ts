@@ -7,4 +7,5 @@ export class User extends Document{
     readonly email: String;
     readonly password: String;
     readonly role: String;
+    readonly image: String;
 }
